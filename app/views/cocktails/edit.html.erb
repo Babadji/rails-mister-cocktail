@@ -1,0 +1,10 @@
+<div class="container">
+  <div>
+    <h3>Update your cocktail</h3>
+    <%= render 'cocktails/form' %>
+  </div>
+  <div>
+  <%= link_to "Cocktail Updated", cocktail_path(@cocktail), method: :patch %>
+  </div>
+</div>
+

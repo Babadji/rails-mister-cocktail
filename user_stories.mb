@@ -1,0 +1,9 @@
+1/ A user can see the list of cocktails
+GET "cocktails"
+
+2/ A user can see the details of a given cocktail, with the dose needed for each ingredient
+GET "cocktails/42"
+
+3/ A user can create a new cocktail
+GET "cocktails/new"
+POST "cocktails"
