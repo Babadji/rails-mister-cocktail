@@ -14,8 +14,8 @@ ingredient1 = Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 
-cocktail1 = Cocktail.create(name: "Mojito")
-Cocktail.create(name: "Sex and the beach")
-Cocktail.create(name: "Old Fashioned")
+cocktail1 = Cocktail.create(name: "Mojito", picture_url: "cocktail-1.jpg")
+Cocktail.create(name: "Sex and the beach", picture_url: "cocktail-2.jpg")
+Cocktail.create(name: "Old Fashioned", picture_url: "cocktail-3.jpg")
 
 dose1 = Dose.create(description: "test", cocktail: cocktail1, ingredient: ingredient1)
