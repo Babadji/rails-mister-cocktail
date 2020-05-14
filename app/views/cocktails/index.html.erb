@@ -1,11 +1,46 @@
-<div class="container">
-  <h1>All Cocktails</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <h1>The Best Cocktails in Town</h1>
+      <p>Find cocktails inspiration</p>
+    </div>
+  </div>
 
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-     <% end %>
-  </ul>
+  <div class="container text-center">
+    <h1 class="text-center">All Cocktails</h1>
+    <br>
+    <div class="add-cocktail">
+      <%= link_to "Add your favorite cocktail recipe", new_cocktail_path %>
+    </div>
+  </div>
+  </div>
 
-  <%= link_to "New cocktail", new_cocktail_path %>
-</div>
+
+  <div class="container-bis">
+    <div class="cards">
+      <div class="cards">
+        <% @cocktails.each do |cocktail| %>
+          <div class="cards">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+              <%= link_to cocktail.name, cocktail_path(cocktail) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+
+
+</body>
+</html>
+
+    <!-- <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    </div> -->
+
+
