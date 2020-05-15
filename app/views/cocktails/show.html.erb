@@ -1,28 +1,52 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <h1><%= @cocktail.name %></h1>
+      <p>Your cocktail</p>
+    </div>
+  </div>
 
-  <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
+  <div class="container">
+
+
+    <%= cl_image_tag @cocktail.photo.key, width: 500, height: 400, crop: :fill %>
 
 
 
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %></li>
-    <li><%= dose.description %></li>
-    <%= link_to "Delete Dose", cocktail_dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete your cocktail?"} %>
-    <% end %>
-  </ul>
-
-      <h3>Create Doses</h3>
-
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :description %>
-        <%= f.association :ingredient %>
-        <%= f.submit %>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.ingredient.name %></li>
+      <li><%= dose.description %></li>
+      <%= link_to "Delete Dose", cocktail_dose_path(dose), method: :delete, data: { confirm: "Are you sure you want to delete your cocktail?"} %>
       <% end %>
+    </ul>
 
-  <%= link_to "Update Cocktail", edit_cocktail_path(@cocktail) %>
-  <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to delete your cocktail?"} %>
-  <hr>
-  <%= link_to "Go back to cocktails list", cocktails_path %>
-</div>
+        <h3>Add Doses & Ingredients</h3>
+
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description %>
+          <%= f.association :ingredient %>
+          <%= f.submit %>
+        <% end %>
+
+    <%= link_to "Update Cocktail", edit_cocktail_path(@cocktail) %>
+    <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure you want to delete your cocktail?"} %>
+    <hr>
+    <%= link_to "Go back to cocktails list", cocktails_path %>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

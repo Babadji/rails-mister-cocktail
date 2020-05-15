@@ -15,6 +15,16 @@
 @import "pages/index";
 
 
+.perso-hero {
+  background-image: url("cocktail.photo.key");
+  background-size: cover;
+  color: white;
+  padding: 120px 0;
+  height: 500px;
+  background-color: rgba(0,0,0,0.9);
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
 .hero {
   background-image: url("cover-1.jpg");
