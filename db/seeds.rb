@@ -1,21 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
+# COCKTAILS
+Dose.destroy_all
 Ingredient.destroy_all
 Cocktail.destroy_all
-Dose.destroy_all
+
 
 ingredient1 = Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 
-cocktail1 = Cocktail.create(name: "Mojito", picture_url: "cocktail-1.jpg")
-Cocktail.create(name: "Sex and the beach", picture_url: "cocktail-2.jpg")
-Cocktail.create(name: "Old Fashioned", picture_url: "cocktail-3.jpg")
+file = URI.open('https://images.unsplash.com/photo-1500217052183-bc01eee1a74e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
+cocktail1 = Cocktail.create(name: "Mojito")
+cocktail1.photo.attach(io: file, filename: 'cocktail1.png', content_type: 'image/png')
 
-dose1 = Dose.create(description: "test", cocktail: cocktail1, ingredient: ingredient1)
+file = URI.open('https://images.unsplash.com/photo-1589393947253-82b26e6bced7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80')
+cocktail2 = Cocktail.create(name: "Sex and the beach")
+cocktail2.photo.attach(io: file, filename: 'cocktail2.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1571950006119-9f047f9d27b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80')
+cocktail3 = Cocktail.create(name: "Old Fashioned")
+cocktail3.photo.attach(io: file, filename: 'cocktail3.png', content_type: 'image/png')
+
+
+# DOSE
+
+# dose1 = Dose.create(description: "test", cocktail: cocktail1, ingredient: ingredient1)

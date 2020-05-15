@@ -1,5 +1,9 @@
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
-  <%= f.input :picture_url %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+
+
+<hr>
+  <%= link_to "Go back to cocktails list", cocktails_path %>
